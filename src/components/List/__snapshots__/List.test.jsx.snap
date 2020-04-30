@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component renders List 1`] = `
+<ul>
+  <li
+    key="0"
+  >
+    <a
+      href="./monster/"
+    >
+      <img
+        alt="Lorem Ipsum"
+        src="https://placekitten.com/200/200"
+      />
+    </a>
+  </li>
+  <li
+    key="1"
+  >
+    <a
+      href="./monster/"
+    >
+      <img
+        alt="Dolor Sitar"
+        src="https://placekitten.com/200/200"
+      />
+    </a>
+  </li>
+</ul>
+`;

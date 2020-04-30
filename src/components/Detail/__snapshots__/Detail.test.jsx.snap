@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail component renders Detail 1`] = `
+<Fragment>
+  <img
+    alt="Lorem Ipsum"
+    src="https://placekitten.com/200/200"
+  />
+  <h3>
+    Lorem Ipsum
+  </h3>
+  <p>
+    Dolor sit amet!
+  </p>
+</Fragment>
+`;
