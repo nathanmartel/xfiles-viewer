@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component renders List 1`] = `
+<Fragment>
+  <button
+    disabled={true}
+    onClick={[Function]}
+  >
+    Prev
+  </button>
+     
+  1
+     
+  <button
+    onClick={[Function]}
+  >
+    Next
+  </button>
+  <ul />
+</Fragment>
+`;
