@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import List from '../List/List';
+import Detail from '../Detail/Detail';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 export default function App() {
   const [monsters, setMonsters] = useState([]);
@@ -16,9 +18,12 @@ export default function App() {
 
 
   return ( 
-    <>
-      <h1>X-Files Monsters of the Week</h1>
-      <List monsters={monsters} />
-    </>
+    <BrowserRouter>
+      <h1><a href="/">X-Files Monsters of the Week</a></h1>
+      <Switch>
+        <Route exact path='/monster/:name' component={Detail} />
+        <Route exact path='/' component={List} monsters={monsters} />
+      </Switch>
+    </BrowserRouter>
   );
 }
