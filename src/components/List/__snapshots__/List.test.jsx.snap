@@ -1,3 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List component renders List 1`] = `<ul />`;
+exports[`List component renders List 1`] = `
+<Fragment>
+  <ul />
+  <button
+    onClick={[Function]}
+  >
+    Prev
+  </button>
+  1
+  <button
+    onClick={[Function]}
+  >
+    Next
+  </button>
+</Fragment>
+`;
