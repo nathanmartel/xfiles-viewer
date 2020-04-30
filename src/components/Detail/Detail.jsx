@@ -1,41 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { useParams } from 'react-router';
+import { fetchCharacterDetail } from '../../services/xfiles.js';
 
 const Detail = () => {
   
-  const [charname, setName] = useState('Lorem Ipsum');
-  const [image, setImage] = useState('https://placekitten.com/200/200');
-  const [description, setDescription] = useState('Lorem ipsum dolor sit amet!');
+  const [charname, setName] = useState('');
+  const [image, setImage] = useState('');
+  const [description, setDescription] = useState('');
 
   const { name } = useParams();
 
-
   useEffect(() => {
-    fetch(`https://xfiles-api.herokuapp.com/api/v1/characters/${name}`)
-      .then(res => res.json())
-      .then(data => {
-        console.log('data is', data);
-        setName(data[0].name);
-        setImage(data[0].image);
-        setDescription(data[0].description);
+    fetchCharacterDetail(name)
+      .then(character => {
+        setName(character.name);
+        setImage(character.image);
+        setDescription(character.description);
       });
   }, []);
 
   return (
     <>
-      <p>Detail</p>
+      <h4>Character Detail</h4>
       <img src={image} alt={charname} />
       <h3>{charname}</h3>
       <p>{description}</p>
     </>
   );
 };
-
-// Detail.propTypes = {
-//   image: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-//   description: PropTypes.string.isRequired
-// };
 
 export default Detail;
