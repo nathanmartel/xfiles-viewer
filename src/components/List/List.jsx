@@ -9,7 +9,7 @@ const List = () => {
   useEffect(() => {
     fetchCharacters(page)
       .then(data => { console.log(data); setMonsters(data); });
-  }, []);
+  }, [page]);
 
 
   const monsterList = monsters.map((monster, index) => (
@@ -22,12 +22,12 @@ const List = () => {
 
   return (
     <>
+      <button onClick={() => setPage(page - 1)} disabled={ page <= 1 }>Prev</button>
+      &nbsp;&nbsp; {page} &nbsp;&nbsp;
+      <button onClick={() => setPage(page + 1)}>Next</button>
       <ul>
         {monsterList}
       </ul>
-      <button onClick={() => setPage(page - 1)}>Prev</button>
-       {page} 
-      <button onClick={() => setPage(page + 1)}>Next</button>
     </>
   );
 };

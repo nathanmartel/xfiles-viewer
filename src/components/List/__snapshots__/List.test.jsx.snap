@@ -2,17 +2,20 @@
 
 exports[`List component renders List 1`] = `
 <Fragment>
-  <ul />
   <button
+    disabled={true}
     onClick={[Function]}
   >
     Prev
   </button>
+     
   1
+     
   <button
     onClick={[Function]}
   >
     Next
   </button>
+  <ul />
 </Fragment>
 `;
